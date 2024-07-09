@@ -24,6 +24,7 @@ const App = () => {
 
   console.log(import.meta.env.VITE_APPWRITE_URL)
   // conditional rendering
+  
 
   return !loading? (
     <div className='min-h-screen flex flex-wrap text-center bg-slate-400'>
