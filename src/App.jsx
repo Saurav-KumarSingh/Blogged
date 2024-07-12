@@ -22,7 +22,7 @@ const App = () => {
     .finally(()=>setLoading(false))
   },[])
 
-  console.log(import.meta.env.VITE_APPWRITE_URL)
+  // console.log(import.meta.env.VITE_APPWRITE_URL)
   // conditional rendering
   
 
@@ -31,7 +31,7 @@ const App = () => {
       <div className='w-full block'>
         <Header/>
         <main>
-          TODO:{/* <Outlet/> */}
+          <Outlet/>
         </main>
         <Footer/>
       </div>

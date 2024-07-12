@@ -6,7 +6,7 @@ export class  AuthService{
     client= new Client();
     account;
 
-    //constructor is used because wheneve the project will load then only call
+    //constructor is used because whenever the project will load then only call
     constructor(){
         this.client
         .setEndpoint(conf.appWriteUrl)
@@ -28,22 +28,23 @@ export class  AuthService{
             throw error;
         }
     }
-    async login({email}){
+    async login({email,password}){
         try {
             return await this.account.createEmailPasswordSession(email,password)
         } catch (error) {
             throw error;
         }
     }
-    async getCurrentUser(){
+    async getCurrentUser() {
         try {
             return await this.account.get();
         } catch (error) {
-            throw error;
+            console.log("Appwrite serive :: getCurrentUser :: error", error);
         }
+
         return null;
     }
-    async logOut(){
+    async logout(){
         try {
             await this.account.deleteSessions()
         } catch (error) {
